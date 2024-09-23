@@ -4,4 +4,12 @@ const getAll = () => {
     return httpCommon.get("/notes");
 }
 
-export default  {getAll}
+const create = data => {
+    return httpCommon.post("/notes", data);
+}
+
+const getById = noteById => {
+    return httpCommon.get(`/notes/${noteById}`);
+}
+
+export default  { getAll, create, getById }

@@ -21,15 +21,15 @@ const NotesList = () => {
             <h1>List of Notes</h1>
             <div className="notes-list mt-4">
             {
-                notes && notes.map(note => (
+                notes.length > 0 ? notes.map(note => (
                     <div key={note.id} className="notes-preview mt-3">
-                        <Link to="#">
+                        <Link to={`/notes/${note.id}`}>
                         <h5 className="primary-color text-capitalize">{note.title}</h5>
                         <p>{note.body}</p>
                         <p>{note.category}</p>
                         </Link>
                     </div>
-                ))
+                )) : <div><h2>Note is not available yet.</h2></div>
             }
             </div>
         </div>
